@@ -13,9 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: curl
-      uses: wei/curl@master
-      with:
-        args: --user ${{secrets.JFROG_API_USER}}:${{secrets.JFROG_API_KEY}} https://sntdrctopoc.jfrog.io/artifactory/almrepo/oracle-java/jdk-8u211-linux-x64.tar.gz --output ./jdk-8u211-linux-x64.tar.gz
+      run: |
+        curl --user ${{secrets.JFROG_API_USER}}:${{secrets.JFROG_API_KEY}} https://sntdrctopoc.jfrog.io/artifactory/almrepo/oracle-java/jdk-8u211-linux-x64.tar.gz --output ./jdk-8u211-linux-x64.tar.gz
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
