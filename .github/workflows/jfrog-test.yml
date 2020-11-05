@@ -15,6 +15,12 @@ jobs:
     - name: curl
       run: |
         curl --user ${{secrets.JFROG_API_USER}}:${{secrets.JFROG_API_KEY}} https://sntdrctopoc.jfrog.io/artifactory/almrepo/oracle-java/jdk-8u211-linux-x64.tar.gz --output ./jdk-8u211-linux-x64.tar.gz
+        curl -X GET --user ${{secrets.JFROG_API_USER}}:${{secrets.JFROG_API_KEY}}  https://sntdrctopoc.jfrog.io/artifactory/maven-releases/limit-manager-microservice/limit-manager/1.9.0/limit-manager-1.9.0.jar --output ./limit-manager-1.9.0.jar
+        curl --user ${{secrets.JFROG_API_USER}}:${{secrets.JFROG_API_KEY}}  https://sntdrctopoc.jfrog.io/artifactory/almrepo/sonar-scanner/sonar-scanner-cli-3.2.0.1227-linux.zip --output ./sonar-scanner-cli-1.zip
+        curl --user ${{secrets.JFROG_API_USER}}:${{secrets.JFROG_API_KEY}}  https://sntdrctopoc.jfrog.io/artifactory/maven-releases/com/isb/ccsw/sgs/sgs-auth/4.0.1/sgs-auth-4.0.1.jar --output ./sgs-auth-4.0.1.jar
+        curl --user ${{secrets.JFROG_API_USER}}:${{secrets.JFROG_API_KEY}}  https://sntdrctopoc.jfrog.io/artifactory/maven-releases/es/santander/adn360-security/1.1.5/adn360-security-1.1.5.jar --output ./adn360-security-1.1.5.jar
+        
+
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
